@@ -67,7 +67,7 @@ async function makeSwitchFiles(xexFile) {
   const count = Math.max(1, Math.min(3, (navigator.hardwareConcurrency || 2) - 1));
   say(`Translating ${containers.length} shaders from your disc…`, 0);
   const errors = [];
-  const { shaders, failed } = await withPool("./shader-tools/glsl_worker.js?v=5", count, glslMaker,
+  const { shaders, failed } = await withPool("./shader-tools/glsl_worker.js?v=7", count, glslMaker,
     (translate) => makeGlsl(containers, translator, translate, header, undefined,
       (fraction) => say("Translating Xbox 360 shaders", fraction * 0.7),
       (error) => errors.push(error)));

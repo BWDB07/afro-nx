@@ -3,6 +3,7 @@ import { hlslToGlsl } from './chain.js';
 import { loadPython } from './py.js?v=5';
 
 const quiet = () => ({ print: () => {}, printErr: () => {} });
+const AFRO_FALLTHROUGH_SHADERS = new Set(['ps_069459B4C78435DC', 'ps_3AA213F4F5CAB0A0']);
 
 function matchAfroShaderInterface(name, hlsl) {
   // The native renderer uses the base sampler from SharedConstants.
@@ -28,7 +29,7 @@ export async function glslJob({ createDxc, createSpirvCross, loadPyodide, pyodid
   return ({ id, name, hlsl }) => {
     try {
       const compatible = matchAfroShaderInterface(name, hlsl);
-      const source = name === 'ps_069459B4C78435DC' ? py.lowerAfro(compatible) : compatible;
+      const source = AFRO_FALLTHROUGH_SHADERS.has(name) ? py.lowerAfro(compatible) : compatible;
       return { id, glsl: enc.encode(hlslToGlsl(name, source, modules, py)) };
     } catch (e) {
       return { id, error: e.message || String(e) };

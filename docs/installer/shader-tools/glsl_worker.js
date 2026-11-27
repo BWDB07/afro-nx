@@ -2,7 +2,7 @@
 import createDxcModule from './wasm/dxc_web.mjs';
 import createSpirvCrossModule from './wasm/spirv_cross.mjs';
 import { loadPyodide } from './vendor/pyodide/pyodide.mjs';
-import { glslJob } from './lib/glsl_job.js?v=5';
+import { glslJob } from './lib/glsl_job.js?v=7';
 
 const handle = await glslJob({
   createDxc: createDxcModule,
