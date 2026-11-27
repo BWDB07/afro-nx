@@ -8,7 +8,7 @@ The preview uses original game timing and a 30 FPS cap at stock clocks. Frame ra
 
 ## Install
 
-You need your own Xbox 360 disc. Use the [browser ISO extractor](https://bwdb07.github.io/afro-nx/installer/) in desktop Chrome or Edge to prepare the `game_root` folder. Follow the [build guide](docs/building.md) to produce the NRO and shader files locally, then arrange the files on the SD card as shown below.
+You need your own Xbox 360 disc. Use the [browser ISO extractor](https://bwdb07.github.io/afro-nx/installer/?v=2) in desktop Chrome or Edge to prepare the `game_root` folder. Follow the [build guide](docs/building.md) to produce the NRO and shader files locally, then arrange the files on the SD card as shown below.
 
 ```text
 switch/AFRO-nx/
