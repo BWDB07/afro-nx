@@ -1,10 +1,10 @@
-const NAME = "AFRO-nx-game-files.zip";
+const NAME = "AFRO-nx.zip";
 const serviceWorker = navigator.serviceWorker;
 let registration;
 
 export function prepareDownload() {
   if (!serviceWorker || !window.TransformStream) return;
-  registration ??= serviceWorker.register("./download-worker.js");
+  registration ??= serviceWorker.register("./download-worker.js?v=3");
   // A disabled service worker leaves the native file picker available.
   void registration.catch(() => {});
   return registration;

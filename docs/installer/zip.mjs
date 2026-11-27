@@ -1,7 +1,7 @@
 const MAX32 = 0xffffffff;
 const FLAGS = 0x0808;
 const DOS_DATE = 0x0021;
-const PREFIX = "switch/AFRO-nx/game_root/";
+const PREFIX = "switch/AFRO-nx/";
 const encoder = new TextEncoder();
 const crcTable = Uint32Array.from({ length: 256 }, (_, byte) => {
   for (let bit = 0; bit < 8; bit++) byte = (byte >>> 1) ^ ((byte & 1) ? 0xedb88320 : 0);
@@ -47,15 +47,20 @@ function centralHeader(entry) {
   return data;
 }
 
-export async function writeGameZip(iso, manifest, sink, signal, report = () => {}) {
-  const members = manifest.entries.map((entry) => ({
+export async function writeGameZip(iso, manifest, sink, signal, report = () => {}, runtime = []) {
+  const files = [
+    ...runtime.map(({ path, bytes }) => ({ path, offset: 0, size: bytes.length, source: new Blob([bytes]) })),
+    ...manifest.entries.map((entry) => ({ ...entry, path: "game_root/" + entry.path, source: iso })),
+  ];
+  const members = files.map((entry) => ({
     ...entry,
     name: encoder.encode(PREFIX + entry.path + (entry.directory ? "/" : "")),
     flags: entry.directory ? 0x0800 : FLAGS,
   }));
   const overhead = members.reduce((total, entry) =>
     total + 76 + 2 * entry.name.length + (entry.directory ? 0 : 16), 22);
-  if (manifest.bytes + overhead >= MAX32) {
+  const total = manifest.bytes + runtime.reduce((size, file) => size + file.bytes.length, 0);
+  if (total + overhead >= MAX32) {
     throw new Error("The extracted files are too large for this ZIP format.");
   }
   let position = 0;
@@ -67,7 +72,7 @@ export async function writeGameZip(iso, manifest, sink, signal, report = () => {
   }
   const central = [];
   for (const entry of members) {
-    const source = entry.offset;
+    const source = entry.source;
     const offset = position;
     const { directory, flags, name } = entry;
     const size = directory ? 0 : entry.size;
@@ -77,13 +82,13 @@ export async function writeGameZip(iso, manifest, sink, signal, report = () => {
     if (!directory) {
       for (let start = 0; start < size; start += 2 ** 20) {
         signal.throwIfAborted();
-        const block = new Uint8Array(await iso.slice(
-          source + start, source + Math.min(start + 2 ** 20, size),
+        const block = new Uint8Array(await source.slice(
+          entry.offset + start, entry.offset + Math.min(start + 2 ** 20, size),
         ).arrayBuffer());
         for (const byte of block) crc = (crc >>> 8) ^ crcTable[(crc ^ byte) & 255];
         await append(block);
         written += block.byteLength;
-        report(written);
+        report(written, total);
       }
       await append(descriptor((crc ^ 0xffffffff) >>> 0, size));
     }

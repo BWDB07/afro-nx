@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <meta name="description" content="Extract your own Afro Samurai Xbox 360 disc image for AFRO-nx in your browser.">
-  <title>AFRO-nx Disc Extractor</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Build a Switch install ZIP from your own Afro Samurai Xbox 360 disc image.">
+  <title>AFRO-nx Switch Installer</title>
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.mjs?v=2"></script>
+  <script type="module" src="app.mjs?v=3"></script>
 </head>
 <body>
   <header class="site-header">
@@ -15,8 +15,8 @@
     <a href="https://github.com/BWDB07/afro-nx">Project on GitHub</a>
   </header>
   <main>
-    <h1>Disc extractor</h1>
-    <p class="intro">Turn your Afro Samurai Xbox 360 disc image into an SD card ZIP. Your files stay on this device.</p>
+    <h1>Switch installer</h1>
+    <p class="intro">Make an SD card ZIP from your Afro Samurai disc image. Your browser generates the Switch shaders from your ISO. Your disc files stay on this device.</p>
     <section aria-labelledby="disc-title">
       <h2 id="disc-title">Choose your disc image</h2>
       <label class="picker" id="drop-zone" for="disc">
@@ -25,7 +25,7 @@
         <input id="disc" type="file" accept=".iso">
       </label>
       <div class="actions">
-        <button id="save" disabled>Save game files ZIP</button>
+        <button id="save" disabled>Create Switch ZIP</button>
         <button id="cancel" type="button" hidden>Cancel</button>
       </div>
       <progress id="progress" aria-label="ZIP progress" value="0" max="1" hidden></progress>
@@ -33,8 +33,8 @@
     </section>
     <section class="instructions" aria-labelledby="install-title">
       <h2 id="install-title">Copy to your Switch</h2>
-      <p>Extract <code>AFRO-nx-game-files.zip</code> to the root of your SD card. The ZIP creates <code>switch/AFRO-nx/game_root/</code>. Use the <a href="https://github.com/BWDB07/afro-nx/blob/main/docs/building.md">build guide</a> for the NRO and shaders. Save the ZIP on your computer first.</p>
-      <p class="hint">Use desktop Chrome or Edge with about 4 GB of free disk space.</p>
+      <p>Save <code>AFRO-nx.zip</code> on your computer, then extract it to the root of your SD card. It includes the NRO, both generated shader files, the 30 FPS config, and <code>game_root/</code> under <code>switch/AFRO-nx/</code>.</p>
+      <p class="hint">Use desktop Chrome or Edge with about 4 GB of free disk space. Shader compilation can take a few minutes.</p>
     </section>
   </main>
 </body>

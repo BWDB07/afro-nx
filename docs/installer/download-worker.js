@@ -33,7 +33,7 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(new Response(job.readable, {
     headers: {
       "Content-Type": "application/zip",
-      "Content-Disposition": 'attachment; filename="AFRO-nx-game-files.zip"',
+      "Content-Disposition": 'attachment; filename="AFRO-nx.zip"',
       "Cache-Control": "no-store",
     },
   }));

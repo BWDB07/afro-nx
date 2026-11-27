@@ -1,6 +1,6 @@
 import { readDisc } from "./disc.mjs";
-import { writeGameZip } from "./zip.mjs";
-import { openDownload, prepareDownload } from "./download.mjs?v=2";
+import { writeGameZip } from "./zip.mjs?v=3";
+import { openDownload, prepareDownload } from "./download.mjs?v=3";
 
 const disc = document.querySelector("#disc");
 const dropZone = document.querySelector("#drop-zone");
@@ -16,7 +16,7 @@ const nativePicker = typeof window.showSaveFilePicker === "function";
 let browserDownload = Boolean(prepareDownload());
 
 function updateSaveButton() {
-  save.textContent = browserDownload ? "Save game files ZIP" : "Choose save location";
+  save.textContent = browserDownload ? "Create Switch ZIP" : "Choose save location";
   save.disabled = !selected || Boolean(controller) || !(browserDownload || nativePicker);
 }
 
@@ -64,24 +64,45 @@ dropZone.addEventListener("drop", (event) => {
 });
 cancel.addEventListener("click", () => controller?.abort());
 
+function generateSwitchFiles(file, manifest, signal) {
+  const xex = manifest.entries.find((entry) => !entry.directory && entry.path.toLowerCase() === "default.xex");
+  const worker = new Worker(new URL("shader-worker.mjs?v=3", import.meta.url), { type: "module" });
+  function stop() { worker.terminate(); }
+  return new Promise((resolve, reject) => {
+    if (signal.aborted) {
+      reject(signal.reason);
+      return;
+    }
+    signal.addEventListener("abort", () => reject(signal.reason), { once: true });
+    worker.addEventListener("error", (event) => reject(new Error(event.message || "Shader tools failed to start.")));
+    worker.addEventListener("message", ({ data }) => {
+      if (data.error) reject(new Error(data.error));
+      else if (data.files) resolve(data.files);
+      else {
+        progress.value = data.fraction;
+        announce(data.message);
+      }
+    });
+    worker.postMessage(file.slice(xex.offset, xex.offset + xex.size));
+  }).finally(stop);
+}
+
 save.addEventListener("click", async () => {
   if (!selected || controller) return;
-  const { file, manifest } = selected;
+  const chosen = selected;
+  const { file, manifest } = chosen;
   controller = new AbortController();
   const streamed = browserDownload;
   updateSaveButton();
   disc.disabled = true;
   dropZone.setAttribute("aria-disabled", "true");
   let sink;
+  let startingDownload = false;
   try {
-    if (streamed) {
-      announce("Starting the browser download…");
-      cancel.hidden = false;
-      sink = await openDownload(controller.signal);
-    } else {
+    if (!streamed) {
       announce("Choose a folder in the Save As window.");
       const destination = await window.showSaveFilePicker({
-        suggestedName: "AFRO-nx-game-files.zip",
+        suggestedName: "AFRO-nx.zip",
         startIn: "downloads",
         types: [{ description: "ZIP archive", accept: { "application/zip": [".zip"] } }],
       });
@@ -90,17 +111,28 @@ save.addEventListener("click", async () => {
     progress.hidden = false;
     progress.value = 0;
     cancel.hidden = false;
+    if (!chosen.runtime) {
+      announce("Preparing the NRO and generating shaders from your ISO…");
+      chosen.runtime = await generateSwitchFiles(file, manifest, controller.signal);
+    }
+    controller.signal.throwIfAborted();
+    if (streamed) {
+      startingDownload = true;
+      announce("Starting the browser download…");
+      sink = await openDownload(controller.signal);
+    }
+    progress.value = 0;
     announce("Writing the ZIP. Keep this tab open.");
     let lastPercent = -1;
-    await writeGameZip(file, manifest, sink, controller.signal, (written) => {
-      const fraction = written / manifest.bytes;
+    await writeGameZip(file, manifest, sink, controller.signal, (written, total) => {
+      const fraction = written / total;
       const percent = Math.floor(fraction * 100);
       progress.value = fraction;
       if (percent !== lastPercent) {
         lastPercent = percent;
         announce(`Writing the ZIP · ${percent}%`);
       }
-    });
+    }, chosen.runtime);
     controller.signal.throwIfAborted();
     cancel.hidden = true;
     announce("Finalizing the ZIP…");
@@ -112,7 +144,7 @@ save.addEventListener("click", async () => {
     if (sink) await sink.abort().catch(() => {});
     progress.hidden = true;
     if (controller.signal.aborted) announce("ZIP creation cancelled.");
-    else if (streamed && nativePicker) {
+    else if (startingDownload && nativePicker) {
       browserDownload = false;
       announce("The browser download stopped. Select Choose save location to try saving directly.", true);
     } else if (error.name === "AbortError") {
