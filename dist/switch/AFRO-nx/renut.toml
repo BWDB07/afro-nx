@@ -1,0 +1,27 @@
+# AFRO-nx native 720p release candidate with original game timing.
+gpu_plugin = ""
+banjo_renderer = "renut"
+renut_gpu_backend = "deko3d"
+banjo_cpu_enhancements = false
+banjo_noncpu_enhancements = false
+banjo_gpu_boost = false
+banjo_renut_dynamic_resolution = false
+disable_msaa = false
+banjo_renut_capture_pool = true
+banjo_renut_capture_batches = true
+banjo_renut_fast_draw = true
+banjo_renut_fast_draw_verify = false
+afro_diag_stub_large_ps = false
+afro_60fps_timing = false
+afro_diag_sim_timing = false
+switch_profile_stacks = false
+renut_gpu_profile = 0
+banjo_renut_diag_gpu_shaders = false
+nfsmw_captura_cada_s = 0
+frame_cap = "30"
+log_level = "info"
+msaa_level = 2
+afro_capture_pool_only = true
+afro_render_queue_notify_idle = true
+banjo_renut_core_layout = true
+switch_perf_count_calls = false

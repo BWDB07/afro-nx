@@ -1,0 +1,14 @@
+# Afro Samurai XDK 7776; discovered from its executable, not inherited.
+[functions]
+# Both are two-instruction adjusted-this tail thunks (addi r3,r3,4; b to a known function).
+# Validation found a direct tail branch to each. The previous function ends in blr/padding.
+"0x824CDE18" = { }  # reached by b at 0x824CE204; branches to 0x824C1840
+"0x824CA9B0" = { }  # reached by b at 0x824CB81C; branches to 0x824C1840
+"0x825B2010" = { }  # runtime indirect dispatch; follows bctr at 0x825B200C and ends in blr at 0x825B207C
+"0x827F2EC0" = { }  # runtime callback pointer at 0x827F2F24; one-instruction branch thunk to 0x827F2A40
+"0x8264DE30" = { }  # runtime indirect call in sub_82672CB8 during combatintro load; independent wrapper after branch at 0x8264DE2C
+# Vtable tail thunks: 0x826392A8 is registered; each neighbor starts after bctr
+# and independently loads a different method slot. 0x826392D8 was hit at runtime.
+"0x826392C0" = { }  # preceding bctr 0x826392BC, dispatches slot +0x24
+"0x826392D8" = { }  # preceding bctr 0x826392D4, dispatches slot +0x20
+"0x826392F0" = { }  # preceding bctr 0x826392EC, nullable dispatch or blr

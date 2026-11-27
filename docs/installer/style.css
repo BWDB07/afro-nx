@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font: 16px/1.55 system-ui, sans-serif; background: #121110; color: #f6f0e8; }
+body { margin: 0; }
+a { color: #ffd2c9; text-underline-offset: .22em; }
+.site-header { padding: 1rem max(1.25rem, calc((100vw - 58rem) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #36302e; }
+.wordmark { color: inherit; font-weight: 900; font-size: 1.35rem; letter-spacing: -.05em; text-decoration: none; }
+.wordmark span { color: #ff745f; }
+main { width: min(100% - 2.5rem, 48rem); margin: clamp(2rem, 8vw, 5.25rem) auto; }
+h1 { margin: 0; font-size: clamp(2.55rem, 9vw, 5.1rem); line-height: 1; letter-spacing: -.06em; }
+h2 { margin: 0 0 .8rem; font-size: 1.25rem; }
+.intro { max-width: 36rem; margin: 1rem 0 2rem; color: #d0c4ba; font-size: 1.15rem; }
+section { padding: clamp(1rem, 4vw, 1.65rem); background: #1d1a19; border: 1px solid #3e3532; border-radius: .75rem; }
+.picker { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; padding: 1rem; background: #181514; border: 1px dashed #8f665c; border-radius: .5rem; cursor: pointer; }
+.picker:focus-within, .picker.dragging { outline: 2px solid #ff745f; outline-offset: 2px; }
+.picker input { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: pointer; }
+.picker[aria-disabled="true"] { opacity: .65; }
+.pick-label { font-weight: 750; white-space: nowrap; }
+#file-label { color: #d0c4ba; overflow-wrap: anywhere; }
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0; }
+button { border: 0; padding: .7rem 1rem; min-height: 2.75rem; border-radius: .38rem; background: #ff745f; color: #23130f; font: inherit; font-weight: 750; cursor: pointer; }
+button:disabled { background: #493a35; color: #e5d8d0; cursor: default; }
+#cancel { background: #493a35; color: #f6f0e8; }
+progress { width: 100%; accent-color: #ff745f; }
+#status { min-height: 1.5rem; margin: .55rem 0 0; overflow-wrap: anywhere; }
+#status[data-error] { color: #ffab9c; }
+.instructions { margin-top: 1rem; }
+.instructions p { margin: .4rem 0; }
+.hint { color: #d0c4ba; }
+code { white-space: normal; overflow-wrap: anywhere; }
+:focus-visible { outline: 2px solid #ffb8ac; outline-offset: 2px; }

@@ -1,0 +1,1 @@
+# Afro Samurai: no inherited addresses. Populate only from Afro evidence.

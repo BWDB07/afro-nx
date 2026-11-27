@@ -1,0 +1,99 @@
+# The final gameplay delta store, before the timer accumulation and dispatch.
+# The initialization and freeze stores keep their original behavior.
+[[midasm_hook]]
+address = 0x826A0DC8
+name = "AfroScaleSimulationStep"
+registers = ["f31"]
+
+# Timing hooks in the animation and cutscene paths, based on AfroSamuraiRecomp.
+# Keep sub_82676300's frameIn30hz conversion at its authored 1/30 s per frame.
+
+[[midasm_hook]]
+address = 0x826D5DD0
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826DE0F0
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826F2B10
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826F3418
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826F3620
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826F36C4
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826F3780
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x826F3844
+name = "AfroUseFrameStep"
+registers = ["f0"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x82663264
+name = "AfroUseFrameStep"
+registers = ["f1"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x827174D8
+name = "AfroUseFrameStep"
+registers = ["f1"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x8271757C
+name = "AfroUseFrameStep"
+registers = ["f1"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x8265CDF8
+name = "AfroUseFrameStep"
+registers = ["f31"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x8265CF74
+name = "AfroUseFrameStep"
+registers = ["f31"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x8272A860
+name = "AfroUseFrameStep"
+registers = ["f31"]
+after_instruction = true
+
+[[midasm_hook]]
+address = 0x82373AE4
+name = "AfroUseFrameStep"
+registers = ["f9"]
+after_instruction = true

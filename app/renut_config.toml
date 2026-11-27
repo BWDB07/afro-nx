@@ -1,0 +1,23 @@
+# Afro Samurai, title 4E4D07D8. Internal target name retained for shared tooling.
+includes = ["config/renut_funcs.toml", "config/renut_hooks.toml", "overrides.toml"]
+# Conservative first codegen: no inherited register-lifetime or ABI assumptions.
+cr_as_local = true
+ctr_as_local = true
+xer_as_local = true
+reserved_as_local = true
+skip_msr = true
+dform_disp_split = true
+fctiwz_inline = true
+fcti_inline = true
+dcbt_prefetch = true
+rotate_word_shifts = true
+fp_compares_modeless = true
+fp_mode_lookahead = true
+fp_mode_lookahead_past_branch = true
+fp_copy_pairs = true
+fp_copy_forwarding = true
+div_inline = true
+fp_moves_modeless = true
+non_volatile_as_local = false
+non_argument_as_local = false
+elide_lr_stores = false

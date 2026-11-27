@@ -1,0 +1,820 @@
+# Afro Samurai: empty pending profiles and reached, zero-difference verification.
+# PC profile perfil_pc.csv: 723 newly sampled functions; localize_native may refuse unsafe forms.
+sub_8281A100
+sub_82324EB0
+sub_823A03F0
+sub_82523E50
+sub_8256C818
+sub_82592A48
+sub_826F94D8
+sub_82722B58
+sub_8272BFF0
+sub_82186BC8
+sub_82347A68
+sub_8238F7A0
+sub_8254C150
+sub_82656E58
+sub_82679290
+sub_82707C60
+sub_823284E0
+sub_823A7FF8
+sub_823E53A0
+sub_824B3F78
+sub_8250F338
+sub_82673818
+sub_826A7130
+sub_826B63D8
+sub_826F32C8
+sub_82710850
+sub_827FE348
+sub_8238FF70
+sub_8262C0E0
+sub_82733E50
+sub_827D00C8
+sub_827F63A8
+sub_82151E90
+sub_8258DC30
+sub_82622A30
+sub_826AAF50
+sub_826CAD20
+sub_82818978
+sub_821E9C20
+sub_82369D08
+sub_823ECB30
+sub_82419368
+sub_825B3C98
+sub_82672CB8
+sub_826AA198
+sub_821EA770
+sub_82230648
+sub_8240C130
+sub_82599020
+sub_82641D68
+sub_826A1330
+sub_8271B2B8
+sub_827BFDB8
+sub_827D9A38
+sub_8234BC48
+sub_82617338
+sub_826A5760
+sub_82715530
+sub_8273B008
+sub_8281A458
+sub_823283A8
+sub_82356D90
+sub_827FEAC8
+sub_8234A8F0
+sub_8241A530
+sub_826D5750
+sub_826EDEF0
+sub_82710220
+sub_821501C8
+sub_82369F48
+sub_825603A8
+sub_825B2568
+sub_826537C0
+sub_8266DD58
+sub_827C39F0
+sub_8237D260
+sub_82398600
+sub_82566A70
+sub_825C1000
+sub_8263EEA8
+sub_826AA070
+sub_826EC710
+sub_826EDB30
+sub_827BFFC8
+sub_827C1B78
+sub_827C74D0
+sub_82348860
+sub_82411458
+sub_82418388
+sub_825B1318
+sub_825B2010
+sub_825CFC98
+sub_82626690
+sub_826CE020
+sub_826E3060
+sub_827164B0
+sub_827E4930
+sub_82816890
+sub_821EA878
+sub_82362C80
+sub_82382A78
+sub_823AA7E0
+sub_82419D98
+sub_82653B68
+sub_82325528
+sub_82419F60
+sub_824291A8
+sub_825F1390
+sub_825FE4D0
+sub_826A59C8
+sub_82150460
+sub_822409E8
+sub_8236AF68
+sub_823EC400
+sub_825B2080
+sub_8263BD10
+sub_8266E0C0
+sub_821591F8
+sub_82193F80
+sub_8254F520
+sub_82572DB0
+sub_8259EBE0
+sub_825B13E8
+sub_825EDD98
+sub_82715F88
+sub_8273BFE8
+sub_8254B068
+sub_8259FFB8
+sub_825A49E0
+sub_82748578
+sub_82224930
+sub_82550BF8
+sub_825D0AF0
+sub_8263BF28
+sub_827DAA28
+sub_821BB798
+sub_82328DD8
+sub_82361FD8
+sub_82417A08
+sub_82654AD0
+sub_826864A8
+sub_827E18E0
+sub_82814D68
+sub_821E9A18
+sub_82355898
+sub_823A4168
+sub_825D0968
+sub_82655608
+sub_826B6230
+sub_827C1678
+sub_827C3C08
+sub_827D1C78
+sub_82191648
+sub_82326EA0
+sub_82341AF0
+sub_82574628
+sub_825902C8
+sub_826563E8
+sub_826A11D0
+sub_826C47A0
+sub_8281A090
+sub_823485B0
+sub_826AC440
+sub_82422A50
+sub_825F6260
+sub_826A63E8
+sub_826B1790
+sub_826F4D28
+sub_82190A80
+sub_821C7FE0
+sub_821F8678
+sub_82364398
+sub_82397488
+sub_826183B8
+sub_82684080
+sub_826A7518
+sub_82708818
+sub_82722AF8
+sub_8240F7E0
+sub_824108E0
+sub_827F8EA0
+sub_821DBE88
+sub_824113C8
+sub_825F4410
+sub_826621B8
+sub_82683958
+sub_826C20A8
+sub_827362C0
+sub_82343858
+sub_82358098
+sub_825CEE78
+sub_82371698
+sub_8254D208
+sub_8256AC98
+sub_826B64D0
+sub_82341648
+sub_82512488
+sub_8260F330
+sub_8263FFA0
+sub_82654EE8
+sub_826AB858
+sub_82710B90
+sub_827D1448
+sub_821BC000
+sub_8232FA68
+sub_823E7410
+sub_8259E9F8
+sub_826ADF48
+sub_826FFE18
+sub_82720740
+sub_82594E58
+sub_825A8950
+sub_825F8E10
+sub_82635408
+sub_826A7D08
+sub_826E1FE0
+sub_827C2EF0
+sub_821F5558
+sub_82252BC0
+sub_823423D0
+sub_82375D30
+sub_823983E8
+sub_825743F8
+sub_82668600
+sub_82713EE0
+sub_82718F98
+sub_827392C8
+sub_827E13A8
+sub_821EAD50
+sub_82325410
+sub_827FE528
+sub_82190460
+sub_8225C5F0
+sub_826E33D0
+sub_826EC3D8
+sub_82716160
+sub_8271D528
+sub_82800038
+sub_821F1878
+sub_821F4078
+sub_8234B408
+sub_82526DC8
+sub_8252A010
+sub_827252A0
+sub_827FEA20
+sub_82362A08
+sub_8241AEB0
+sub_82717730
+sub_822365A8
+sub_82318D40
+sub_82418848
+sub_827076B8
+sub_82728688
+sub_827DBB60
+sub_82157920
+sub_82362848
+sub_823EC538
+sub_82590970
+sub_82633968
+sub_826A76F0
+sub_821E9CC8
+sub_8235A600
+sub_823646F0
+sub_8236AE00
+sub_82419DD8
+sub_8257B2A8
+sub_8258E0C0
+sub_826607A0
+sub_82669DD8
+sub_82736508
+sub_827C0A78
+sub_827C1420
+sub_82151708
+sub_82186F18
+sub_82417D20
+sub_8254B8B8
+sub_826AB768
+sub_825299D0
+sub_825B1BA8
+sub_826569B8
+sub_82667698
+sub_826B0FB0
+sub_826F9790
+sub_8281FC48
+sub_821893D0
+sub_822339C8
+sub_82326590
+sub_8252FEB0
+sub_825F4C18
+sub_821533B8
+sub_821C3E68
+sub_82227D48
+sub_8234AFA0
+sub_8259FBE0
+sub_8264DB98
+sub_8266EFF8
+sub_826A5EF0
+sub_82215440
+sub_823190D0
+sub_82369970
+sub_82389FC0
+sub_827C4408
+sub_825CF6D8
+sub_826F9458
+sub_82716368
+sub_827D4570
+sub_82153EC0
+sub_8241BF60
+sub_821E9720
+sub_8221D358
+sub_82232198
+sub_8224E108
+sub_82375590
+sub_823E2D88
+sub_825109B0
+sub_825A4038
+sub_82675450
+sub_8231DEB8
+sub_823425E0
+sub_82526C20
+sub_825B2BC8
+sub_826ED8C8
+sub_82189150
+sub_82597268
+sub_825C6BA8
+sub_8266F248
+sub_82345880
+sub_823ECCA8
+sub_82524B28
+sub_825A4400
+sub_8273E260
+sub_827B4300
+sub_827C3E48
+sub_8281F870
+sub_82152728
+sub_82324840
+sub_823FD950
+sub_82423E00
+sub_82621980
+sub_827F6278
+sub_8225C118
+sub_8232A590
+sub_8241A310
+sub_82423B58
+sub_82511860
+sub_825A3B48
+sub_827ACCF8
+sub_82188C30
+sub_823E9608
+sub_823ECA18
+sub_8273D078
+sub_827D0918
+sub_827FE410
+sub_82328C88
+sub_82348490
+sub_826A8C28
+sub_82804BA8
+sub_823E78D8
+sub_826AA6E8
+sub_826B6140
+sub_826E6028
+sub_8273A370
+sub_827BF050
+sub_8236FD08
+sub_82512550
+sub_82602DF0
+sub_8264DE30
+sub_826A8498
+sub_826D2C18
+sub_826E3DD8
+sub_8216B1D0
+sub_8218B060
+sub_82639DD8
+sub_82742100
+sub_82695B70
+sub_826A5E70
+sub_826C6310
+sub_826F91D0
+sub_82348930
+sub_82366CB8
+sub_823AA6B0
+sub_824B8C90
+sub_825610F0
+sub_826A4DB0
+sub_82710948
+sub_8272C6B0
+sub_827D3A10
+sub_827E1F50
+sub_82225960
+sub_825A2EB0
+sub_827107A0
+sub_8231D930
+sub_82327EF0
+sub_823FBD88
+sub_824A9E70
+sub_824B8B30
+sub_826A4C30
+sub_826AB370
+sub_826EC748
+sub_82327218
+sub_8234AA10
+sub_82633018
+sub_823E6F88
+sub_825F6B58
+sub_82739D30
+sub_8218F030
+sub_823559B8
+sub_82718268
+sub_82398580
+sub_826A1520
+sub_827C1C70
+sub_827C26C8
+sub_82324DC8
+sub_82345D38
+sub_8236B0B0
+sub_82650780
+sub_82660180
+sub_8266C3A8
+sub_826F7898
+sub_8221CF58
+sub_8232A790
+sub_8241AAD0
+sub_82580B88
+sub_82668568
+sub_826763A8
+sub_826A7340
+sub_827BF538
+sub_827C5890
+sub_827E2BA0
+sub_82817510
+sub_821F56D8
+sub_8236A300
+sub_8250CD00
+sub_825A2AF8
+sub_82652B50
+sub_826546E0
+sub_826D30D0
+sub_8273F6B0
+sub_821B3D08
+sub_821ECCB8
+sub_8259FD50
+sub_826960F0
+sub_827086E8
+sub_8221D458
+sub_822319B8
+sub_82327EC0
+sub_82528B80
+sub_8259F458
+sub_826A9FC0
+sub_821687D0
+sub_821A31C8
+sub_823A9630
+sub_82653D68
+sub_8266CEA8
+sub_827CC3E8
+sub_827D3F40
+sub_827FEC18
+sub_8218BA60
+sub_821E9678
+sub_82361C60
+sub_823711F8
+sub_8259F818
+sub_826F7E48
+sub_82735940
+sub_827C8178
+sub_8218B2C8
+sub_825951B8
+sub_826A4E88
+sub_826D24A0
+sub_82722040
+sub_8273B450
+sub_82158B40
+sub_825991D0
+sub_826D2380
+sub_827C0040
+sub_825ED8D0
+sub_82639C88
+sub_8269FA68
+sub_826A9D18
+sub_827C8600
+sub_8281B590
+sub_825901B0
+sub_825B2A58
+sub_82654E50
+sub_8270FDB0
+sub_827C9F88
+sub_82232550
+sub_82333660
+sub_82414C98
+sub_825A4D10
+sub_82656728
+sub_826694C0
+sub_82733280
+sub_82178230
+sub_821EA128
+sub_823631E8
+sub_823915C0
+sub_82422870
+sub_82509F50
+sub_827C0670
+sub_82419C08
+sub_82581B68
+sub_82594180
+sub_827B59C8
+sub_8216AD58
+sub_821F3260
+sub_82590DF0
+sub_825F4C90
+sub_82632A98
+sub_826AE6D0
+sub_826B5F18
+sub_82722BE8
+sub_8273A1E8
+sub_827C14E8
+sub_82807CF8
+sub_823430E0
+sub_823899E0
+sub_826DBCA0
+sub_8271AF18
+sub_827E1C90
+sub_8239BC70
+sub_82510B70
+sub_825615C8
+sub_8273A2C8
+sub_82747C90
+sub_82811DE0
+sub_821C80E8
+sub_8241BEC0
+sub_8273FAE0
+sub_827F61E0
+sub_82806D50
+sub_821C7E28
+sub_8234A810
+sub_8273D998
+sub_82815218
+sub_82226150
+sub_82347C10
+sub_82370C70
+sub_824B8DE0
+sub_82591948
+sub_8266F820
+sub_826A6560
+sub_827342F8
+sub_8273AC68
+sub_82151798
+sub_82567508
+sub_8265F188
+sub_8218A0F8
+sub_822322B0
+sub_823635C0
+sub_825B4458
+sub_826D3558
+sub_82739718
+sub_8217FF50
+sub_8232E320
+sub_823A7B78
+sub_8240CCD0
+sub_82411E68
+sub_82593878
+sub_82639E78
+sub_8267F5A0
+sub_826F7760
+sub_8270C7D0
+sub_8241C3E8
+sub_82178060
+sub_8265FF98
+sub_826D2590
+sub_828075F8
+sub_821C7EB0
+sub_82361B48
+sub_825CF790
+sub_826A2918
+sub_82800C60
+sub_8269FBF0
+sub_826B5980
+sub_826F8D58
+sub_82365A68
+sub_82370500
+sub_823E7090
+sub_826C22B8
+sub_82710CC0
+sub_8231BFC8
+sub_8236A0A0
+sub_823EC650
+sub_825FB408
+sub_82151228
+sub_82345978
+sub_8236CDC8
+sub_82418B60
+sub_827CA078
+sub_827DF558
+sub_827EB2B0
+sub_82154D00
+sub_82189FD8
+sub_82228C80
+sub_823FB998
+sub_82569758
+sub_82596300
+sub_825AD258
+sub_825CFBD8
+sub_8266ED08
+sub_826FA938
+sub_82397750
+sub_825CFEF0
+sub_82657298
+sub_827BF0B8
+sub_82808590
+sub_82180088
+sub_821F5B30
+sub_82231C30
+sub_82246588
+sub_8225BCA0
+sub_82418768
+sub_82189CC0
+sub_821EA658
+sub_8254D9E8
+sub_825F3798
+sub_82711048
+sub_827CFB60
+sub_821532B0
+sub_82215398
+sub_8236B1F8
+sub_823E70F8
+sub_82512F88
+sub_82670988
+sub_82529938
+sub_825D0490
+sub_825FD238
+sub_82714118
+sub_821C3EC8
+sub_821C8CE8
+sub_82326DC8
+sub_82361F20
+sub_8236BFA0
+sub_823876F8
+sub_8239FC60
+sub_82418670
+sub_82526970
+sub_82670228
+sub_827F6510
+sub_821541A8
+sub_82191F48
+sub_82328E78
+sub_8256C698
+sub_825C4E08
+sub_8265F388
+sub_826FB728
+sub_821514B8
+sub_82669700
+sub_827E6708
+sub_82151528
+sub_821DBA00
+sub_823250F8
+sub_821C7DC0
+sub_823486B8
+sub_82734490
+sub_827C61B0
+sub_8218B600
+sub_8236FF98
+sub_825B2300
+sub_8263FA80
+sub_8264BF30
+sub_826A1F98
+sub_826F8658
+sub_827C5018
+sub_821EA6D0
+sub_823438F8
+sub_82417BC8
+sub_8258DDB0
+sub_826A82A0
+sub_827196F8
+sub_827FE200
+sub_82369778
+sub_823A78E0
+sub_825761B0
+sub_82652DD0
+sub_82151608
+sub_82232000
+sub_823215E0
+sub_82348C78
+sub_823748D0
+sub_826173A0
+sub_826405C8
+sub_82716DE8
+sub_827FEDD0
+sub_824139E8
+sub_82574190
+sub_8259FA48
+sub_826B4E60
+sub_826FC808
+sub_827B9C58
+sub_82328D68
+sub_823AB338
+sub_82426ED0
+sub_8254D5E8
+sub_8259EEE0
+sub_826A0AE8
+sub_826F74D8
+sub_825A0640
+sub_82724FF0
+sub_827ACB48
+sub_8218FAC0
+sub_82361A68
+sub_825162F0
+sub_8256CEF0
+sub_82653988
+sub_827C1CA8
+sub_827C48A0
+sub_827E4F38
+82837FB0 394 console samples, 2278 instructions, 13 direct callees
+824C1078 30 console samples, 60 instructions, 0 direct callees
+827CA0F8 23 console samples, 344 instructions, 6 direct callees
+824B81B8 18 console samples, 110 instructions, 0 direct callees
+82326AA0 14 console samples, 26 instructions, 0 direct callees
+82834EA0 10 console samples, 24 instructions, 1 direct callees
+824E0BC8 8 console samples, 88 instructions, 0 direct callees
+824B5210 5 console samples, 66 instructions, 0 direct callees
+82837940 5 console samples, 164 instructions, 3 direct callees
+823F47E8 5 console samples, 22 instructions, 0 direct callees
+826A9E50 5 console samples, 62 instructions, 0 direct callees
+825CBE70 5 console samples, 36 instructions, 0 direct callees
+82326B48 5 console samples, 56 instructions, 0 direct callees
+821F3520 5 console samples, 710 instructions, 10 direct callees
+825D0DA8 4 console samples, 48 instructions, 2 direct callees
+82150538 4 console samples, 64 instructions, 0 direct callees
+825CE8F8 4 console samples, 34 instructions, 0 direct callees
+82661DF8 4 console samples, 26 instructions, 0 direct callees
+82414264 3 console samples, 21 instructions, 1 direct callees
+8283DAD0 3 console samples, 326 instructions, 2 direct callees
+8283FAB0 3 console samples, 222 instructions, 2 direct callees
+8283D6C0 3 console samples, 260 instructions, 2 direct callees
+828335D0 3 console samples, 114 instructions, 5 direct callees
+8267F820 3 console samples, 2060 instructions, 50 direct callees
+82684190 3 console samples, 28 instructions, 0 direct callees
+821F9300 3 console samples, 2 instructions, 1 direct callees
+826FABA0 3 console samples, 738 instructions, 8 direct callees
+82178290 3 console samples, 24 instructions, 0 direct callees
+8238B540 3 console samples, 26 instructions, 0 direct callees
+821593D8 3 console samples, 194 instructions, 4 direct callees
+826A6D40 3 console samples, 30 instructions, 0 direct callees
+825904B0 3 console samples, 244 instructions, 1 direct callees
+823424A0 3 console samples, 34 instructions, 3 direct callees
+82542378 3 console samples, 22 instructions, 0 direct callees
+825154D8 2 console samples, 92 instructions, 1 direct callees
+8241A110 2 console samples, 22 instructions, 0 direct callees
+823D77D0 2 console samples, 20 instructions, 1 direct callees
+828401E8 2 console samples, 696 instructions, 2 direct callees
+8215ED50 2 console samples, 28 instructions, 1 direct callees
+82836CD0 2 console samples, 190 instructions, 3 direct callees
+8283F790 2 console samples, 200 instructions, 2 direct callees
+82419748 2 console samples, 90 instructions, 7 direct callees
+8283FE70 2 console samples, 222 instructions, 2 direct callees
+826B4300 2 console samples, 728 instructions, 28 direct callees
+826766B8 2 console samples, 20 instructions, 0 direct callees
+826293F8 2 console samples, 44 instructions, 6 direct callees
+826797E0 2 console samples, 64 instructions, 2 direct callees
+82150638 2 console samples, 88 instructions, 0 direct callees
+82380898 2 console samples, 32 instructions, 1 direct callees
+8267B1F8 2 console samples, 68 instructions, 3 direct callees
+82170790 2 console samples, 28 instructions, 0 direct callees
+821AE448 2 console samples, 42 instructions, 1 direct callees
+825C0FA0 2 console samples, 24 instructions, 3 direct callees
+825CDB28 2 console samples, 58 instructions, 0 direct callees
+821A7B50 2 console samples, 20 instructions, 0 direct callees
+824B1788 2 console samples, 52 instructions, 0 direct callees
+824B1858 2 console samples, 14 instructions, 1 direct callees
+824B2A30 2 console samples, 336 instructions, 4 direct callees
+82232250 2 console samples, 24 instructions, 0 direct callees
+824182A0 2 console samples, 58 instructions, 0 direct callees
+821C8A58 2 console samples, 56 instructions, 1 direct callees
+826FA370 2 console samples, 60 instructions, 0 direct callees
+82676300 2 console samples, 42 instructions, 1 direct callees
+826A9DC0 2 console samples, 36 instructions, 0 direct callees
+82810158 2 console samples, 52 instructions, 0 direct callees
+82232E00 2 console samples, 32 instructions, 3 direct callees
+82533E68 2 console samples, 916 instructions, 6 direct callees
+82712A30 2 console samples, 42 instructions, 0 direct callees
+82414F38 2 console samples, 20 instructions, 1 direct callees
+826D1D08 2 console samples, 44 instructions, 1 direct callees
+82671118 2 console samples, 26 instructions, 0 direct callees
+82381DC8 2 console samples, 38 instructions, 1 direct callees
+8264D650 2 console samples, 22 instructions, 0 direct callees
+825CC680 2 console samples, 36 instructions, 2 direct callees
+8240D998 2 console samples, 14 instructions, 1 direct callees
+82631210 2 console samples, 24 instructions, 0 direct callees
+826973A8 1 console samples, 38 instructions, 0 direct callees
+823D7728 1 console samples, 24 instructions, 1 direct callees
+822B6BF8 1 console samples, 374 instructions, 3 direct callees
+8262FC00 1 console samples, 260 instructions, 0 direct callees
+82199A98 6 console samples, 54 instructions, 1 direct callees
+8265ACF8 6 console samples, 24 instructions, 0 direct callees
+8281BBE0 5 console samples, 30 instructions, 1 direct callees
+82676870 4 console samples, 52 instructions, 1 direct callees
+825CE210 3 console samples, 78 instructions, 0 direct callees
+82234958 3 console samples, 36 instructions, 0 direct callees
+8263D398 3 console samples, 42 instructions, 5 direct callees
+8221DFE8 3 console samples, 40 instructions, 3 direct callees
+8219D508 3 console samples, 2 instructions, 1 direct callees
+827C1C38 3 console samples, 14 instructions, 0 direct callees
+823A8CB8 3 console samples, 40 instructions, 3 direct callees
+826A4BA8 3 console samples, 34 instructions, 1 direct callees
+82153E28 3 console samples, 38 instructions, 4 direct callees
+8254ACC0 3 console samples, 22 instructions, 2 direct callees
+827DEAC0 3 console samples, 22 instructions, 0 direct callees
+821519B0 3 console samples, 22 instructions, 0 direct callees
+8219D480 3 console samples, 2 instructions, 1 direct callees
+826F1300 3 console samples, 194 instructions, 10 direct callees
+82604018 3 console samples, 134 instructions, 4 direct callees
+82419170 3 console samples, 64 instructions, 0 direct callees
+8218B420 3 console samples, 64 instructions, 0 direct callees
+82152368 3 console samples, 24 instructions, 1 direct callees
+82176850 3 console samples, 42 instructions, 0 direct callees
+828004B8 3 console samples, 50 instructions, 3 direct callees
+82344CF0 3 console samples, 36 instructions, 0 direct callees
+826282C0 3 console samples, 35 instructions, 1 direct callees
+82529E48 3 console samples, 114 instructions, 0 direct callees
+8218AE58 3 console samples, 70 instructions, 3 direct callees
+82326C78 3 console samples, 46 instructions, 0 direct callees

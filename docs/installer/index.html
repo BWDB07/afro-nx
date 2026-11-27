@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Extract your own Afro Samurai Xbox 360 disc image for AFRO-nx in your browser.">
+  <title>AFRO-nx Disc Extractor</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="https://github.com/BWDB07/afro-nx">AFRO<span>-nx</span></a>
+    <a href="https://github.com/BWDB07/afro-nx">Project on GitHub</a>
+  </header>
+  <main>
+    <h1>Disc extractor</h1>
+    <p class="intro">Turn your Afro Samurai Xbox 360 disc image into an SD card ZIP. Your files stay on this device.</p>
+    <section aria-labelledby="disc-title">
+      <h2 id="disc-title">Choose your disc image</h2>
+      <label class="picker" id="drop-zone" for="disc">
+        <span class="pick-label">Choose ISO</span>
+        <span id="file-label">or drop your European Xbox 360 .iso here</span>
+        <input id="disc" type="file" accept=".iso">
+      </label>
+      <div class="actions">
+        <button id="save" disabled>Save game files ZIP</button>
+        <button id="cancel" type="button" hidden>Cancel</button>
+      </div>
+      <progress id="progress" aria-label="ZIP progress" value="0" max="1" hidden></progress>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+    <section class="instructions" aria-labelledby="install-title">
+      <h2 id="install-title">Copy to your Switch</h2>
+      <p>Extract <code>AFRO-nx-game-files.zip</code> to the root of your SD card. The ZIP creates <code>switch/AFRO-nx/game_root/</code>. Use the <a href="https://github.com/BWDB07/afro-nx/blob/main/docs/building.md">build guide</a> for the NRO and shaders. Save the ZIP on your computer first.</p>
+      <p class="hint">Use desktop Chrome or Edge with about 4 GB of free disk space.</p>
+    </section>
+  </main>
+</body>
+</html>

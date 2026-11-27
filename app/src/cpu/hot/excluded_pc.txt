@@ -1,0 +1,17 @@
+# Sampled PC functions intentionally excluded from mechanical copies.
+# Tiny leaves (<=12 guest instructions and no calls) are already inlined by codegen.
+sub_82178380
+sub_8223E440
+sub_821EA8C0
+sub_825B1ED8
+sub_826C6338
+sub_8270D280
+sub_827D4728
+sub_827D7338
+sub_827D2588
+sub_827D1248
+sub_8219D730
+sub_826A9C58
+# The PC guard saw exact NaN sign differences, so these copies are disabled.
+sub_826F8B50
+sub_822594B8
