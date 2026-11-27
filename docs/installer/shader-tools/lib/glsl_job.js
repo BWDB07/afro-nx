@@ -1,11 +1,22 @@
-// banjo-nx-installer: one GLSL worker's tools and its job: the translator's HLSL of one shader -> (a pixel shader:
-// renut_early_alpha.py) -> DXC -> SPIRV-Cross -> deko3d_glsl.py -> deko3d_glsl_opt.py (lib/chain.js). About 0.9 s a
-// shader on one thread (early alpha, DXC and the passes a third each), so lib/build.js runs several workers:
-// glsl_worker.js on the page, test/glsl_worker_node.mjs in Node.
+// One GLSL worker translates a shader through DXC, SPIRV-Cross and the reNut GLSL converter.
 import { hlslToGlsl } from './chain.js';
-import { loadPython } from './py.js';
+import { loadPython } from './py.js?v=5';
 
 const quiet = () => ({ print: () => {}, printErr: () => {} });
+
+function matchAfroShaderInterface(name, hlsl) {
+  // The native renderer uses the base sampler from SharedConstants.
+  const source = hlsl.replace(/\(([A-Za-z_]\w*_SamplerDescriptorIndex) \+ \d+\)/g, '$1');
+  if (!name.startsWith('vs_')) return source;
+
+  // Remove the newer translator's unused exports before DXC assigns locations.
+  // POSITION2 would shift POINTCOORD and POINTSIZE away from the runtime slots.
+  return source
+    .replace(/^\s*\tout float4 oPosition2 : POSITION2,\r?\n/m, '')
+    .replace(/^\s*\t, out float oUserClip0 : SV_ClipDistance0\r?\n/m, '')
+    .replace(/^\s*\toPosition2 = 0\.0;\r?\n/m, '')
+    .replace(/^\s*\toUserClip0 = dot\(oPos, g_UserClipPlane\);\r?\n/m, '');
+}
 
 // tools: { createDxc, createSpirvCross } (Emscripten factories), loadPyodide, pyodideIndex, readPy(name) -> text.
 // Returns handle(message) -> reply for { id, name, hlsl }: { id, glsl } (UTF-8 bytes) or { id, error }.
@@ -16,9 +27,9 @@ export async function glslJob({ createDxc, createSpirvCross, loadPyodide, pyodid
   const enc = new TextEncoder();
   return ({ id, name, hlsl }) => {
     try {
-      const source = name === 'ps_069459B4C78435DC' ? py.lowerAfro(hlsl) : hlsl;
-      const text = name.startsWith('ps_') ? py.earlyAlpha([[name, source]])[0][1] : source;
-      return { id, glsl: enc.encode(hlslToGlsl(name, text, modules, py)) };
+      const compatible = matchAfroShaderInterface(name, hlsl);
+      const source = name === 'ps_069459B4C78435DC' ? py.lowerAfro(compatible) : compatible;
+      return { id, glsl: enc.encode(hlslToGlsl(name, source, modules, py)) };
     } catch (e) {
       return { id, error: e.message || String(e) };
     }

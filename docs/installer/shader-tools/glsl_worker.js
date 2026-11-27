@@ -2,7 +2,7 @@
 import createDxcModule from './wasm/dxc_web.mjs';
 import createSpirvCrossModule from './wasm/spirv_cross.mjs';
 import { loadPyodide } from './vendor/pyodide/pyodide.mjs';
-import { glslJob } from './lib/glsl_job.js';
+import { glslJob } from './lib/glsl_job.js?v=5';
 
 const handle = await glslJob({
   createDxc: createDxcModule,
@@ -10,7 +10,7 @@ const handle = await glslJob({
   loadPyodide,
   pyodideIndex: new URL('./vendor/pyodide/', import.meta.url).href,
   readPy: async (n) => {
-    const r = await fetch(new URL(`./py/${n}`, import.meta.url));
+    const r = await fetch(new URL(`./py/${n}?v=5`, import.meta.url));
     if (!r.ok) throw new Error(`py/${n}: HTTP ${r.status}`);
     return r.text();
   },

@@ -1,10 +1,8 @@
-// banjo-nx-installer: one shader through banjo-nx's deko3d chain (docs/deko3d-renderer.md section 5 of banjo-nx), in
-// the page. The native build: the translator's first run dumps the pixel shaders' HLSL, tools/renut_early_alpha.py
-// rewrites them, the second run compiles (DXC 1.8.2407, -spirv -DBANJO_DEKO3D), tools/deko3d_shaders.py turns the
-// SPIR-V into uam's GLSL (SPIRV-Cross + tools/deko3d_glsl.py) and tools/deko3d_glsl_opt.py applies its default passes.
+// Browser HLSL to GLSL conversion for deko3d. The native AFRO-nx build uses DXC,
+// SPIRV-Cross, the reNut GLSL converter and alpha specialization on seven pixel shaders.
 // Here:
 //   wasm/renut_hlsl   the translator (exact: test/translate_node.mjs)
-//   py (Pyodide)      renut_early_alpha.py, deko3d_glsl.py, deko3d_glsl_opt.py unchanged (exact: test/py_passes_node.mjs)
+//   py (Pyodide)      deko3d_glsl.py and the alpha pass from deko3d_glsl_opt.py
 //   wasm/dxc_web      DXC v2025.1 (bejeweled3-nx-installer's: fixed arguments, the y flip of a vertex shader undone
 //                     below, the deko3d defines as #define lines): NOT the native DXC, see test/chain_node.mjs
 //   wasm/spirv_cross  SPIRV-Cross 22b22f56 (exact: test/spirv_cross_node.mjs)
@@ -64,7 +62,7 @@ function negateConstant(p) {
   return `uintBitsToFloat(0x${bits.toString(16)}u${note})`;
 }
 
-// hlsl: the translator's text (a pixel shader after early alpha); modules: { dxc, spirvCross } Emscripten modules;
+// hlsl: the translator's text; modules: { dxc, spirvCross } Emscripten modules;
 // py: lib/py.js. Returns the optimised GLSL (what the package holds) or throws.
 export function hlslToGlsl(name, hlsl, modules, py) {
   const { dxc, spirvCross } = modules;
