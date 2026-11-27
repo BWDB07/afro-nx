@@ -58,7 +58,7 @@ export function packageShaders(shaders) {
 
 // The compile jobs: every variant of release/variants.txt whose shader there is, and each shader as it is.
 // glslOf: Map(stem -> UTF-8 GLSL) (the shaders made, and the NRO's own: release/runtime_glsl.json).
-// Returns [{ key (BigInt), stage, text }] in a stable order, each key once.
+// Returns [{ key (BigInt), stem, stage, text }] in a stable order, each key once.
 export function variantJobs(variants, glslOf) {
   const dec = new TextDecoder(), enc = new TextEncoder();
   const jobs = [];
@@ -72,7 +72,7 @@ export function variantJobs(variants, glslOf) {
     const key = fnv1a64(enc.encode(text));
     if (keys.has(key)) return;
     keys.add(key);
-    jobs.push({ key, stage, text });
+    jobs.push({ key, stem, stage, text });
   };
   for (const v of variants) add(v.stem, v.stage, v.pairs);
   for (const stem of [...glslOf.keys()].sort()) add(stem, stem.startsWith('ps_') ? 4 : 0, []);
@@ -81,15 +81,14 @@ export function variantJobs(variants, glslOf) {
 
 // Compiles the jobs with compile(stage, text) -> Promise<{ dksh } | { error }> (one uam, or a pool of workers), at
 // most `parallel` at a time. Returns the cache file and the failures.
-export async function compileVariants(jobs, compile, parallel, progress) {
-  const cache = new Map();
+export async function compileVariants(jobs, compile, parallel, progress, cache = new Map()) {
   const failures = [];
   let next = 0, done = 0;
   const run = async () => {
     while (next < jobs.length) {
       const job = jobs[next++];
       const r = await compile(job.stage, job.text);
-      if (r.error) failures.push({ key: job.key, error: r.error });
+      if (r.error) failures.push({ key: job.key, error: `${job.stem}: ${r.error}` });
       else cache.set(job.key, r.dksh);
       progress?.(++done / jobs.length);
     }

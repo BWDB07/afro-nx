@@ -1,6 +1,6 @@
 import makeTranslator from "./shader-tools/wasm/renut_hlsl.mjs";
 import makeLzx from "./shader-tools/wasm/lzx.mjs";
-import { compileVariants, makeGlsl, packageShaders, variantJobs } from "./shader-tools/lib/build.js";
+import { compileVariants, makeGlsl, packageShaders, variantJobs } from "./shader-tools/lib/build.js?v=6";
 import { gameContainers, sha256 } from "./shader-tools/lib/sources.js";
 import { nroShaders } from "./shader-tools/lib/nro.js";
 import { glslMaker, uamCompile, workerPool } from "./shader-tools/lib/pool.js";
@@ -79,9 +79,7 @@ async function makeSwitchFiles(xexFile) {
   }
   const { jobs } = variantJobs(parseVariants(new TextDecoder().decode(variants)), shadersByName);
   say(`Compiling ${jobs.length} Switch shader variants…`, 0.7);
-  const compiled = await withPool("./shader-tools/uam_worker.js", count, uamCompile,
-    (compile) => compileVariants(jobs, compile, count, (fraction) =>
-      say("Compiling Switch shaders", 0.7 + fraction * 0.3)));
+  const compiled = await compileSwitchShaders(jobs, count);
   if (compiled.failures.length) throw new Error(`Switch shader compilation failed. ${compiled.failures[0].error}`);
 
   return [
@@ -90,6 +88,26 @@ async function makeSwitchFiles(xexFile) {
     { path: "deko3d_glsl.bin", bytes: glsl },
     { path: "deko3d_shaders.bin", bytes: compiled.cache },
   ];
+}
+
+async function compileSwitchShaders(jobs, count) {
+  // The long 3AA pixel shader needs its own fresh compiler and memory arena.
+  // Compile its variants one at a time, after releasing the common worker pool.
+  const normal = jobs.filter((job) => job.stem !== "ps_3AA213F4F5CAB0A0");
+  const large = jobs.filter((job) => job.stem === "ps_3AA213F4F5CAB0A0");
+  const cache = new Map();
+  let done = 0;
+  const report = () => say("Compiling Switch shaders", 0.7 + (++done / jobs.length) * 0.3);
+  const compileGroup = (list, size) => withPool("./shader-tools/uam_worker.js?v=6", size, uamCompile,
+    (compile) => compileVariants(list, compile, size, report, cache));
+  const common = await compileGroup(normal, count);
+  if (common.failures.length) return common;
+  let result = common;
+  for (const job of large) {
+    result = await compileGroup([job], 1);
+    if (result.failures.length) break;
+  }
+  return result;
 }
 
 self.addEventListener("message", async ({ data }) => {

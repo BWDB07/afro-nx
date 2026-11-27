@@ -9,9 +9,14 @@ export async function loadUam(createUamModule, options = {}) {
     compile(stage, glsl) {
       const bytes = enc.encode(glsl);
       const src = m._malloc(bytes.length + 1);
+      if (!src) return { error: 'Could not allocate memory for shader source.' };
       m.HEAPU8.set(bytes, src);
       m.HEAPU8[src + bytes.length] = 0;
       const sizePtr = m._malloc(4);
+      if (!sizePtr) {
+        m._free(src);
+        return { error: 'Could not allocate memory for the compiled shader size.' };
+      }
       const out = m._banjo_uam_compile(stage, src, sizePtr);
       const size = m.HEAPU32[sizePtr >> 2];
       m._free(src);
