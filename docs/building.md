@@ -1,6 +1,6 @@
 # Building AFRO-nx
 
-This source preview uses the Xbox 360 European disc. The tested executable reports title ID `4E4D07D8`. The code generator and shader tools read your own extracted game files.
+AFRO-nx uses the Xbox 360 European disc. The tested executable reports title ID `4E4D07D8`. The code generator and shader tools read your own extracted game files.
 
 ## Tools
 

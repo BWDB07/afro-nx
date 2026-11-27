@@ -116,7 +116,7 @@ async function verifyExecutable(iso, entry) {
     if (optional.getUint32(i * 8) !== 0x00040006) continue;
     const info = await windowOf(xex, optional.getUint32(i * 8 + 4), 16);
     if (info.getUint32(12) !== TITLE) throw new Error("This disc is for a different game.");
-    if (info.getUint32(0) !== MEDIA) throw new Error("This preview expects the tested European Afro Samurai disc.");
+    if (info.getUint32(0) !== MEDIA) throw new Error("AFRO-nx supports the tested European Afro Samurai disc.");
     return;
   }
   throw new Error("The disc executable is missing Xbox 360 title information.");

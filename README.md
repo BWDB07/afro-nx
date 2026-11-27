@@ -2,9 +2,11 @@
 
 An unofficial native Nintendo Switch port of the Xbox 360 version of **Afro Samurai**. The port uses static recompilation with ReXGlue and reNut's Direct3D renderer on deko3d.
 
-## 720p preview
+## v0.1.0 release
 
-The preview uses original game timing and a 30 FPS cap at stock clocks. Frame rate can dip below the cap. In the prologue, one side of Afro's bandana can render dark. The experimental 60 FPS mode is disabled because a reported combat barrier can remain after enemies are defeated.
+[Release notes](https://github.com/BWDB07/afro-nx/releases/tag/v0.1.0)
+
+The release uses original game timing and a 30 FPS cap at stock clocks. Frame rate can dip below the cap. In the prologue, one side of Afro's bandana can render dark. The experimental 60 FPS mode is disabled because a reported combat barrier can remain after enemies are defeated.
 
 ## Install
 
