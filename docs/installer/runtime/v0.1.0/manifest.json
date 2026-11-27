@@ -175,7 +175,7 @@
         {
           "source": "renut.toml",
           "path": "renut.toml",
-          "sha256": "faa5c13dcb07d8bcc8741f4ac4d841885298de24d67141896b9deccd53086ffb"
+          "sha256": "2ac53ac6e3d32e950d68421b5744b3ed45f1333bc54ae3dbab1cde79f2186f2b"
         }
       ],
       "variants_sha256": "c1fb4e8c0ff20e5a13a7224c3819bfe797543cb427985bcc03a21347f0cf47a4"

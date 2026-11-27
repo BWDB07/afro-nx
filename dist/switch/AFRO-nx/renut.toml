@@ -19,6 +19,7 @@ renut_gpu_profile = 0
 banjo_renut_diag_gpu_shaders = false
 nfsmw_captura_cada_s = 0
 frame_cap = "30"
+banjo_show_fps = false
 log_level = "info"
 msaa_level = 2
 afro_capture_pool_only = true

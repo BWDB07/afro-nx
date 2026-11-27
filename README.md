@@ -10,7 +10,7 @@ The release uses original game timing and a 30 FPS cap at stock clocks. Frame ra
 
 ## Install
 
-Open the [browser installer](https://bwdb07.github.io/afro-nx/installer/?v=7) in desktop Chrome or Edge and choose your European Xbox 360 disc ISO. Select **Create Switch ZIP**. The installer includes the NRO and creates the shaders from your disc in the browser. Extract `AFRO-nx.zip` to the root of your SD card.
+Open the [browser installer](https://bwdb07.github.io/afro-nx/installer/?v=8) in desktop Chrome or Edge and choose your European Xbox 360 disc ISO. Select **Create Switch ZIP**. The installer includes the NRO and creates the shaders from your disc in the browser. Extract `AFRO-nx.zip` to the root of your SD card.
 
 ```text
 switch/AFRO-nx/
@@ -24,6 +24,8 @@ switch/AFRO-nx/
 ```
 
 The ZIP includes the [30 FPS configuration](dist/switch/AFRO-nx/renut.toml). Launch the Homebrew Menu in title takeover mode by holding **R** while starting an installed title, then select AFRO-nx. To build manually, see the [build guide](docs/building.md).
+
+To remove the empty green FPS overlay from an existing installation, set `banjo_show_fps = false` in `sd:/switch/AFRO-nx/renut.toml` and restart the game.
 
 ## Bug reports
 

@@ -12,7 +12,7 @@ const quiet = () => ({ print() {}, printErr() {} });
 
 async function get(name, expected) {
   const url = new URL(name, runtime);
-  url.searchParams.set("rev", expected || "4");
+  url.searchParams.set("rev", expected || "8");
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Could not load ${name} (HTTP ${response.status}).`);
   const bytes = new Uint8Array(await response.arrayBuffer());
