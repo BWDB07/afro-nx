@@ -11,7 +11,9 @@ const say = (message, fraction) => postMessage({ message, fraction });
 const quiet = () => ({ print() {}, printErr() {} });
 
 async function get(name, expected) {
-  const response = await fetch(new URL(name, runtime));
+  const url = new URL(name, runtime);
+  url.searchParams.set("rev", expected || "4");
+  const response = await fetch(url);
   if (!response.ok) throw new Error(`Could not load ${name} (HTTP ${response.status}).`);
   const bytes = new Uint8Array(await response.arrayBuffer());
   if (expected && await sha256(bytes) !== expected) throw new Error(`Checksum mismatch for ${name}.`);

@@ -66,7 +66,7 @@ cancel.addEventListener("click", () => controller?.abort());
 
 function generateSwitchFiles(file, manifest, signal) {
   const xex = manifest.entries.find((entry) => !entry.directory && entry.path.toLowerCase() === "default.xex");
-  const worker = new Worker(new URL("shader-worker.mjs?v=3", import.meta.url), { type: "module" });
+  const worker = new Worker(new URL("shader-worker.mjs?v=4", import.meta.url), { type: "module" });
   function stop() { worker.terminate(); }
   return new Promise((resolve, reject) => {
     if (signal.aborted) {

@@ -10,7 +10,7 @@ The release uses original game timing and a 30 FPS cap at stock clocks. Frame ra
 
 ## Install
 
-Open the [browser installer](https://bwdb07.github.io/afro-nx/installer/?v=3) in desktop Chrome or Edge and choose your European Xbox 360 disc ISO. Select **Create Switch ZIP**. The installer includes the NRO and creates the shaders from your disc in the browser. Extract `AFRO-nx.zip` to the root of your SD card.
+Open the [browser installer](https://bwdb07.github.io/afro-nx/installer/?v=4) in desktop Chrome or Edge and choose your European Xbox 360 disc ISO. Select **Create Switch ZIP**. The installer includes the NRO and creates the shaders from your disc in the browser. Extract `AFRO-nx.zip` to the root of your SD card.
 
 ```text
 switch/AFRO-nx/
@@ -30,5 +30,7 @@ The ZIP includes the [30 FPS configuration](dist/switch/AFRO-nx/renut.toml). Lau
 Include the build version, chapter or checkpoint, and reproduction steps. A screenshot helps with visual bugs. For runtime issues, include the relevant `switch/AFRO-nx/logs/` files if available.
 
 ## Credits and license
+
+AFRO-nx is maintained by **BWDB07**.
 
 AFRO-nx adapts the Beautiful Katamari Switch port and its inherited renderer and tooling. Thanks to the ReXGlue, reNut, XenosRecomp, deko3d, and upstream port contributors. See the [license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md) for licensing and attribution.

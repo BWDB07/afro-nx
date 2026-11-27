@@ -4,7 +4,7 @@
   "builds": [
     {
       "nro": "AFRO-nx.nro",
-      "nro_sha256": "b0107048c0ecf8546fb9904ef5ab628817ebcf8fd202cb340099a0f06c7be296",
+      "nro_sha256": "9444f8906dacbfacf978f775ac13689ace0c94954d49f108f11e89e26658c863",
       "xex_sha256": "1c00d14f6622295fd6f83b9c561bd68e49d48e38daa0415d7e0155c62e87dbd4",
       "shaders": {
         "image_sha256": [

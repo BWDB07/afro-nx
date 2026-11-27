@@ -596,7 +596,7 @@ if(REXGLUE_PLATFORM_SWITCH)
     # 2026-11-05: version 1.0.1, the game's memory and the NRO's code on 2 MB blocks, and the boot's cvars.
     rexglue_switch_add_nro(renut
         NAME "Afro Samurai"
-        AUTHOR "AFRO-nx contributors"
+        AUTHOR "BWDB07"
         VERSION "0.0.1"
         ${RENUT_ICON_ARG})
 endif()
